@@ -2,12 +2,11 @@ class App {
   constructor() {
     this.$form = document.querySelector('#form');
     this.$noteTitle = document.querySelector('#note-title');
-    this.$noteTitle = document.querySelector('#form-buttons');
+    this.$formButtons = document.querySelector('#form-buttons');
 
 
     this.addEventListeners();
 
-    this.addEventListeners();
   }
 
   addEventListeners() {
@@ -20,15 +19,17 @@ class App {
     const isFormClicked = this.$form.contains(event.target);
 
     if (isFormClicked) {
-
+      this.openForm();
     } else {
 
     }
+  }
 
     openForm() {
-      this.$form.classList.add('form-opem');
+      this.$form.classList.add('form-open');
+      this.$noteTitle.style.display = 'block';
+      this.$formButtons.style.display = 'block';
     }
-  }
 }
 
 new App()
